@@ -85,6 +85,8 @@ button{
 </div>
 
 <script>
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
 const socket = io({ path: "/api/socket" });
 
 let room="";
@@ -171,6 +173,21 @@ function spawnHeart(){
   setTimeout(()=>h.remove(),4000);
 }
 setInterval(spawnHeart,1500);
+
+ const firebaseConfig = {
+    apiKey: "AIzaSyAn4EksgkqctruGEN9QbZGhTqnc5Uxc1To",
+    authDomain: "comms-61b37.firebaseapp.com",
+    databaseURL: "https://comms-61b37-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "comms-61b37",
+    storageBucket: "comms-61b37.firebasestorage.app",
+    messagingSenderId: "70178388659",
+    appId: "1:70178388659:web:f7dfb5ec5f96349c9f4ec6",
+    measurementId: "G-XKZVGVXL81"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
 </script>
 
 </body>
